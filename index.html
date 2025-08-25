@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Media Services Pricing</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1000px;
+            width: 100%;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+        }
+        
+        header {
+            background: linear-gradient(to right, #ff7e5f, #feb47b);
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .pricing-list {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .pricing-list h2 {
+            color: #ff7e5f;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .service {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #ddd;
+        }
+        
+        .service:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .service-name {
+            font-weight: 600;
+            color: #444;
+        }
+        
+        .service-price {
+            color: #ff7e5f;
+            font-weight: 700;
+        }
+        
+        .calculator {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .calculator h2 {
+            color: #2575fc;
+            margin-bottom: 20px;
+            text-align: center;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #555;
+        }
+        
+        select, input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+        
+        select:focus, input:focus {
+            outline: none;
+            border-color: #2575fc;
+        }
+        
+        .btn {
+            background: linear-gradient(to right, #2575fc, #2f80ed);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background: linear-gradient(to right, #2f80ed, #2575fc);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e8f4ff;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 700;
+            color: #2575fc;
+            display: none;
+        }
+        
+        .contact {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
+            padding: 25px;
+            text-align: center;
+            color: white;
+        }
+        
+        .contact h2 {
+            margin-bottom: 15px;
+        }
+        
+        .whatsapp-btn {
+            display: inline-block;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 12px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            margin-top: 15px;
+            transition: all 0.3s;
+        }
+        
+        .whatsapp-btn:hover {
+            background: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .note {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Social Media Services</h1>
+            <p class="subtitle">High-quality engagement for your social media accounts</p>
+        </header>
+        
+        <div class="content">
+            <div class="pricing-list">
+                <h2>Our Pricing</h2>
+                
+                <div class="service">
+                    <span class="service-name">Likes</span>
+                    <span class="service-price">1000 Likes = 120 Rs</span>
+                </div>
+                
+                <div class="service">
+                    <span class="service-name">Views</span>
+                    <span class="service-price">1000 Views = 20 Rs</span>
+                </div>
+                
+                <div class="service">
+                    <span class="service-name">Views</span>
+                    <span class="service-price">5000 Views = 30 Rs (per 1000)</span>
+                </div>
+                
+                <div class="service">
+                    <span class="service-name">Views</span>
+                    <span class="service-price">10000 Views = 50 Rs (per 1000)</span>
+                </div>
+                
+                <div class="service">
+                    <span class="service-name">Followers</span>
+                    <span class="service-price">1000 Followers = 600 Rs</span>
+                </div>
+            </div>
+            
+            <div class="calculator">
+                <h2>Price Calculator</h2>
+                
+                <div class="form-group">
+                    <label for="service">Select Service</label>
+                    <select id="service">
+                        <option value="likes">Likes</option>
+                        <option value="views">Views</option>
+                        <option value="followers">Followers</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="number" id="quantity" placeholder="Enter quantity" min="100" step="100">
+                </div>
+                
+                <button class="btn" onclick="calculatePrice()">Calculate Price</button>
+                
+                <div id="result" class="result"></div>
+            </div>
+        </div>
+        
+        <div class="contact">
+            <h2>Contact Us</h2>
+            <p>Ready to boost your social media presence?</p>
+            <p>Contact us directly on WhatsApp for quick service</p>
+            <a href="https://wa.me/9231467189027" class="whatsapp-btn">Message on WhatsApp</a>
+            <p class="note">Direct contact number: +92 314 67189027</p>
+        </div>
+    </div>
+
+    <script>
+        function calculatePrice() {
+            const service = document.getElementById('service').value;
+            const quantity = parseInt(document.getElementById('quantity').value);
+            let price = 0;
+            let serviceName = '';
+            
+            if (isNaN(quantity) || quantity < 100) {
+                alert('Please enter a valid quantity (minimum 100)');
+                return;
+            }
+            
+            switch(service) {
+                case 'likes':
+                    price = (quantity / 1000) * 120;
+                    serviceName = 'Likes';
+                    break;
+                case 'views':
+                    if (quantity <= 5000) {
+                        price = (quantity / 1000) * 20;
+                    } else if (quantity <= 10000) {
+                        price = (quantity / 1000) * 30;
+                    } else {
+                        price = (quantity / 1000) * 50;
+                    }
+                    serviceName = 'Views';
+                    break;
+                case 'followers':
+                    price = (quantity / 1000) * 600;
+                    serviceName = 'Followers';
+                    break;
+            }
+            
+            const resultElement = document.getElementById('result');
+            resultElement.innerHTML = `
+                Price for ${quantity} ${serviceName}: <br>
+                <span style="font-size: 24px;">${price.toFixed(2)} Rs</span>
+            `;
+            resultElement.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
